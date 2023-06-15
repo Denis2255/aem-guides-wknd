@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Filter Component"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[richlist.validator]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <columns
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                    maximized="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tags
+                                    cq:showOnCreate="{Boolean}true"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/cq/gui/components/coral/common/form/tagfield"
+                                    allowCreate="{Boolean}true"
+                                    fieldLabel="Tag"
+                                    metaType="tags"
+                                    required="true"
+                                    rootPath="/content/cq:tags/various-tags"
+                                    name="./tag"/>
+                            <link
+                                    granite:class="cmp-link-url"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/coral/common/form/pagefield"
+                                    fieldLabel="Root"
+                                    required="true"
+                                    name="./rootURL"
+                                    nodeTypes="dam:Asset, nt:file, cq:Page"
+                                    rootPath="/content"/>
+                        </items>
+                    </column>
+                </items>
+            </columns>
+        </items>
+    </content>
+</jcr:root>

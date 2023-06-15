@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Text Box"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <minimum-height
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                            fieldLabel="Minimum Height"
+                            min="0"
+                            max="1080"
+                            step="1"
+                            name="./minHeight"/>
+                    <bg-image-desktop
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                            allowUpload="{Boolean}false"
+                            autoStart="{Boolean}false"
+                            class="cq-droptarget"
+                            fileNameParameter="./bgImageDesktopName"
+                            fileReferenceParameter="./bgImageDesktopReference"
+                            mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+                            multiple="{Boolean}false"
+                            name="./bgImageDesktop"
+                            title="Background Image for Desktop"
+                            fieldLabel="Background Image for Desktop"
+                            fieldDescription="Upload Background Image for Desktop"
+                            uploadUrl="${suffix.path}"
+                            useHTML5="{Boolean}true"/>
+                    <bg-image-tab
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                            allowUpload="{Boolean}false"
+                            autoStart="{Boolean}false"
+                            class="cq-droptarget"
+                            fileNameParameter="./bgImageTabName"
+                            fileReferenceParameter="./bgImageTabReference"
+                            mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+                            multiple="{Boolean}false"
+                            name="./bgImageMobile"
+                            title="Background Image for Tab"
+                            fieldLabel="Background Image for Tab"
+                            fieldDescription="Upload Background Image for Tab"
+                            uploadUrl="${suffix.path}"
+                            useHTML5="{Boolean}true"/>
+                    <bg-image-mobile
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                            allowUpload="{Boolean}false"
+                            autoStart="{Boolean}false"
+                            class="cq-droptarget"
+                            fileNameParameter="./bgImageMobileName"
+                            fileReferenceParameter="./bgImageMobileReference"
+                            mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+                            multiple="{Boolean}false"
+                            name="./bgImageMobile"
+                            title="Background Image for Mobile"
+                            fieldLabel="Background Image for Mobile"
+                            fieldDescription="Upload Background Image for Mobile"
+                            uploadUrl="${suffix.path}"
+                            useHTML5="{Boolean}true"/>
+                    <bg-image-position
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Background Image Position"
+                            name="./bgImgPosition"
+                            sling:hideResource="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <left-top
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Left Top"
+                                    value="left top"/>
+                            <left-center
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Left Center"
+                                    value="left center"/>
+                            <left-bottom
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Left Bottom"
+                                    value="left bottom"/>
+                            <right-top
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Right Top"
+                                    value="right top"/>
+                            <right-center
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Right Center"
+                                    value="right center"/>
+                            <right-bottom
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Right Bottom"
+                                    value="right bottom"/>
+                            <center-top
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Center Top"
+                                    value="center top"/>
+                            <center-center
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Center Center"
+                                    value="center center"/>
+                            <center-bottom
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Center bottom"
+                                    value="center left"/>
+                        </items>
+                    </bg-image-position>
+                    <bg-image-size
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Background Image Size"
+                            name="./bgImgSize"
+                            sling:hideResource="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <inherit
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Inherit"
+                                    value="inherit"/>
+                            <cover
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Cover"
+                                    value="cover"/>
+                            <auto
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Auto"
+                                    value="auto"/>
+                            <contain
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Contain"
+                                    value="contain"/>
+                            <custom
+                                    jcr:primaryType="nt:unstructured"
+                                    selected="{Boolean}true"
+                                    text="Custom"
+                                    value="custom"/>
+                        </items>
+                    </bg-image-size>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

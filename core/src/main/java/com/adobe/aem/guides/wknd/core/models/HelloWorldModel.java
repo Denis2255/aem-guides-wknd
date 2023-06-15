@@ -19,6 +19,7 @@ import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_T
 
 import javax.annotation.PostConstruct;
 
+import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
@@ -36,15 +37,14 @@ import java.util.Optional;
 @Model(adaptables = Resource.class)
 public class HelloWorldModel {
 
-    @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
-    @Default(values="No resourceType")
+    @ValueMapValue(name = PROPERTY_RESOURCE_TYPE, injectionStrategy = InjectionStrategy.OPTIONAL)
+    @Default(values = "No resourceType")
     protected String resourceType;
 
     @SlingObject
     private Resource currentResource;
     @SlingObject
     private ResourceResolver resourceResolver;
-
     private String message;
 
     @PostConstruct
@@ -55,8 +55,8 @@ public class HelloWorldModel {
                 .map(Page::getPath).orElse("");
 
         message = "Hello World!\n"
-            + "Resource type is: " + resourceType + "\n"
-            + "Current page is:  " + currentPagePath + "\n";
+                + "Resource type is: " + resourceType + "\n"
+                + "Current page is:  " + currentPagePath + "\n";
     }
 
     public String getMessage() {

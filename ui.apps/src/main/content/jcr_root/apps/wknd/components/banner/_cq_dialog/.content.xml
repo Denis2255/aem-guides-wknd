@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Link component"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    granite:class="cq-siteadmin-admin-properties-tabs"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <first-tab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Block"
+                            sling:resourceType="acs-commons/granite/ui/components/include"
+                            path="/apps/wknd/components/banner/block"
+                            namespace="block"
+                            margin="{Boolean}true">
+                        <parameters
+                                jcr:primaryType="nt:unstructured"
+                                blockTitle="Image configuration"
+                                descriptionIsRequired="{Boolean}true"
+                        />
+                    </first-tab>
+                    <second-tab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Details"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                        <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Heading"
+                                                name="./heading"/>
+                                        <openText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Text"
+                                                name="./text"/>
+                                    <cta
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="CTA"
+                                            sling:resourceType="acs-commons/granite/ui/components/include"
+                                            path="/apps/wknd/components/banner/cta"
+                                            namespace="cta"
+                                            margin="{Boolean}true">
+                                    </cta>
+                                </items>
+                            </column>
+                        </items>
+                    </second-tab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

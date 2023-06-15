@@ -66,6 +66,16 @@
                             <target>/apps/wknd-packages/application/install</target>
                         </embedded>
                         <embedded>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <target>/apps/wknd-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>org.apache.sling</groupId>
+                            <artifactId>org.apache.sling.query</artifactId>
+                            <target>/apps/wknd-packages/application/install</target>
+                        </embedded>
+                        <embedded>
                             <groupId>com.adobe.aem.guides</groupId>
                             <artifactId>aem-guides-wknd.ui.content</artifactId>
                             <type>zip</type>

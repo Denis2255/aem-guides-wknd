@@ -1,0 +1,35 @@
+<sly data-sly-set.siteId="${pageProperties.siteThemeID ? pageProperties.siteThemeID : 'glpg-hcpportal'}"></sly>
+<sly data-sly-test="${wcmmode.edit}">
+    <p class="component-title bg-white text-center py-2 d-flex justify-content-center align-items-center">
+        <span>${component.title}</span>
+    </p>
+    <sly data-sly-set.authorLib="${siteId}.clientlibs.components.author.text-box"></sly>
+</sly>
+
+<sly data-sly-set.publishLib="${siteId}.clientlibs.components.publish.text-box"
+     data-sly-use.clientlibs="${'com.adobe.cq.wcm.core.components.models.ClientLibraries' @
+     categories=[publishLib, authorLib], defer=true}">
+    ${clientlibs.jsAndCssIncludes @ context="unsafe"}
+</sly>
+
+<div class="text-box__inner"
+     style="background-image:url('${properties.bgImageDesktopReference @ context='styleString'}');">
+    <div class="text-box--tab"
+            style="background-image: url('${properties.bgImageTabReference @ context='styleString'}');">
+        <div class="text-box--mobile"
+                style="background-image: url('${properties.bgImageMobileReference @ context='styleString'}'); min-height: ${properties.minHeight @ context='styleString'}px;">
+            <div class="top">
+                <div class="headline-text cmp"
+                     data-sly-resource="${'title-text' @ resourceType='glpg-hcpportal/components/content/headline-text'}">
+                </div>
+                <div data-sly-resource="${'inner-component' @ resourceType='wcm/foundation/components/parsys'}"></div>
+            </div>
+            <sly data-sly-test="${wcmmode.edit}">
+                <p class="component-title bg-white text-center py-2 d-flex justify-content-center align-items-center">
+                    <span>Bottom Part</span>
+                </p>
+            </sly>
+            <div class="w-100" data-sly-resource="${'bottom-component' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </div>
+</div>

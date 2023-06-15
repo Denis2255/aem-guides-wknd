@@ -1,0 +1,15 @@
+<div data-sly-use.model="com.adobe.aem.guides.wknd.core.models.BannerModel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+</div>
+<sly data-sly-test.isLink="${model.authorLink}">
+    <div>${model.heading}</div>
+    <div>${model.text}</div>
+    <div data-sly-use.template="image.html">
+        <sly data-sly-call="${template.image @ path=model.path,size=model.size}"/>
+    </div>
+    <form action="${model.authorLink}" target="${model.targetCTA}">
+        <button>${model.titleCTA}</button>
+    </form>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !model.authorLink, classAppend = 'cmp-image cq-dd-image'}"></sly>
+

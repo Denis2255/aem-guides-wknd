@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/section">
+    <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+            margin="{Boolean}false"/>
+    <items jcr:primaryType="nt:unstructured">
+        <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+                <ctaobject
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="CTA Information"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                        namespace="cta">
+                    <items jcr:primaryType="nt:unstructured">
+                        <titleCTA
+                                jcr:primaryType="cq:Widget"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="The text to display on the button."
+                                fieldLabel="Title CTA"
+                                name="./titleCTA"/>
+                        <url
+                                granite:class="cmp-link-url"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/coral/common/form/pagefield"
+                                fieldLabel="Link"
+                                name="./linkCTA"
+                                nodeTypes="dam:Asset, nt:file, cq:Page"
+                                rootPath="/content"/>
+                        <target
+                                granite:class="cmp-link-target"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                name="./targetCTA"
+                                text="Open link in new tab"
+                                uncheckedValue="_self"
+                                value="_blank"/>
+                    </items>
+                </ctaobject>
+            </items>
+        </column>
+    </items>
+</jcr:root>

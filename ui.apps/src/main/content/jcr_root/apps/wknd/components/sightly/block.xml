@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="granite/ui/components/foundation/section">
+    <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+            margin="{Boolean}false"/>
+    <items jcr:primaryType="nt:unstructured">
+        <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+                <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="${{blockTitle}} title"
+                        fieldDescription="The title of ${{blockTitle}}"
+                        name="./title"/>
+                <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        name="./description"
+                        fieldLabel="${{blockTitle}} description"
+                        fieldDescription="The description of ${{blockTitle}}"
+                        maxlength="${{(Long)descriptionMaxLength}}"
+                        required="${{(Boolean)descriptionIsRequired:false}}"
+                />
+                <extra
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        name="./extraInformation"
+                        hide="${{hideExtra:false}}"
+                        fieldLabel="Extra information of ${{blockTitle}}"
+                />
+            </items>
+        </column>
+    </items>
+
+</jcr:root>

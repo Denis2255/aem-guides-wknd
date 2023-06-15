@@ -1,0 +1,12 @@
+<template data-sly-template.image="${@ path,size}">
+
+    <div data-sly-test.isSize="${size=='small'}">
+        <img src="${path}" alt="" >
+    </div>
+    <div data-sly-test.isSize="${size=='medium'}">
+        <img src="${path}" alt="" width="500" height="500">
+    </div>
+    <div data-sly-test.isSize="${size=='large'}">
+        <img src="${path}" alt="" width="1000" height="1000">
+    </div>
+</template>
